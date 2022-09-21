@@ -1,4 +1,5 @@
-public class App implements Runnable
+
+public class App implements Runnable 
 {
     public void run()
     {
@@ -15,11 +16,12 @@ public class App implements Runnable
         }
     }
 
-    
+    public static void main(String[] args)
+    {
+        new GUI();
 
-    public static void main(String[] args) 
-{
-    Runnable r1 = new App();
+        GUI.create();
+        Runnable r1 = new App();
 
     Thread timer = new Thread(r1);
 
@@ -40,7 +42,7 @@ public class App implements Runnable
         }
 
         
-}
 
-
+        
+    }
 }
