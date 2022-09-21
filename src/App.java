@@ -1,14 +1,21 @@
+import java.io.*;
+import java.text.DecimalFormat;
+import java.util.concurrent.TimeUnit;
 
 public class App implements Runnable 
 {
+    private static final DecimalFormat df = new DecimalFormat("0.00");
+
     public void run()
     {
-        for(int i = 1; i <= 5; i++)
+
+        for(double i = 1; i <= 10; i += 0.01)
         {
-            System.out.println(i);
+            System.out.print("\r" + df.format(i));
+
 
             try{
-                Thread.sleep(1000);
+                TimeUnit.MILLISECONDS.sleep(10); 
             } catch (InterruptedException e){
                 e.printStackTrace();
             }
@@ -24,25 +31,7 @@ public class App implements Runnable
         Runnable r1 = new App();
 
     Thread timer = new Thread(r1);
-
-
-
     timer.start();
 
-    for(int i = 1; i <= 5; i++)
-        {
-            System.out.println("poes");
-
-            try{
-                Thread.sleep(1000);
-            } catch (InterruptedException e){
-                e.printStackTrace();
-            }
-
-        }
-
-        
-
-        
     }
 }
