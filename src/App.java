@@ -8,8 +8,9 @@ public class App implements Runnable
 
     public void run()
     {
+        double time = (int)(Math.random() * 15) + 5;
 
-        for(double i = 1; i <= 10; i += 0.01)
+        for(double i = 1; i <= time; i += 0.01)
         {
             System.out.print("\r" + df.format(i));
 
